@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+        /*font-family = 'Orbitron', sans-serif;*/
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;90&display=swap');
+        /*font-family = 'Playfair Display', serif */
+
+        #timesale *{margin:0; padding:0;}
+        #timesale ul{list-style:none;}
+        #timesale a{text-decoration: none;}
+        #timesale img{max-width:100%; display:block;}
+        
+        #timesale .time_title, #timesale .time{font-size:26px; text-align:center; font-weight:700; margin:20px auto; line-height:26px;}
+        #timesale .time{font-family: 'Playfair Display', serif; font-size:46px; line-height:50px;}
+        #timesale .clock{width:96%; margin:0 auto; padding:24px 0 20px; border:2px solid black; box-shadow:2px 2px rgba(0,0,0,0.5);}
+        #timesale .clock span{text-shadow:1px 1px rgba(0,0,0,0.5); display:inline-block; width:46px;}
+        #timesale .clock i, #timesale .clock em{font-style:normal; text-shadow:1px 1px rgba(0,0,0,0.5); display:inline-block; vertical-align:top;}
+        #timesale .clock .day::after, #timesale .clock .hr::after, #timesale .clock .min::after, #timesale .clock .sec::after{
+            display:block; font-size:10px; line-height:10px; text-shadow: none;
+        }
+        #timesale .clock .day::after{content:"day"}
+        #timesale .clock .hr::after{content:"hr"}
+        #timesale .clock .min::after{content:"min"}
+        #timesale .clock .sec::after{content:"sec"}
+
+    </style>
+</head>
+<body>
+    <section id="timesale" style="display:none;">
+        <div class="time_title"><p>하루 특가! 전제품 50% 할인</p></div>
+        <div class="time">
+            <div class="clock">
+                <span class="day">00</span>
+                <i>:</i>
+                <span class="hr">00</span>
+                <i>:</i>
+                <span class="min">00</span>
+                <i>:</i>
+                <span class="sec">00</span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

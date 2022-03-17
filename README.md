@@ -1,2 +1,2 @@
-# hello-github
-test github
+# timer
+timer test

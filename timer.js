@@ -46,17 +46,18 @@ window.addEventListener("load",function(event) {
            _nowDate = _nowTime.getDate(),
           
            eventNow = new Date(_nowYear, _nowMonth, _nowDate),
-           eventStart = new Date(2022,03,04),
-           eventEnd = new Date(2022,03,10),
+           eventStart = new Date(시작연도,시작월-1,시작일),
+           eventEnd = new Date(종료연도,종료월-1,종료일+1),
            //아이폰의 크롬과 사파리에서는 Date 를 ', : 같은 기호 사용 불가로 위와 같은 표준 표기법 사용해야함
            // 참고 ) https://gosasac.tistory.com/48
            // 주의 ) 월은 index 이므로 -1 해야함
+           // 주의 ) 종료일은 해당 날짜의 23:59:59 까지 이므로 실제로 종료되는 시점은 종료일+1 의 00:00:00 임을 주의
               
            diffT =  eventEnd.getTime() - eventNow.getTime(),
-           diffD = diffT / (1000 * 60 * 60 * 24),
+           countD = (diffT / (1000 * 60 * 60 * 24)) -1,
            // 날짜 차이 계산. 밀리초를 날짜로 바꾸기 위해 (1000*60*60*24) 로 나눠줌
            // 참고 ) new Date(year,month,0) 으로 하면 0일은 없기 때문에 전월의 마지막 일이 출력됨
-           countD = diffD,
+           // 주의 ) 종료일이 위에서  +1 이 되었으므로 -1 해주어야함
            countHr = 23 - _nowTime.getHours(),
            countMin = 59 - _nowTime.getMinutes(),
            countSec = 59 - _nowTime.getSeconds();

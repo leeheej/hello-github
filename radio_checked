@@ -1,0 +1,52 @@
+  <body>
+    <!--
+      input type
+      - text : 일반 텍스트를 입력받음
+      - password : 입력 값이 화면에 보여지지 않도록 해줌
+      - submit : <form>태그 내에 입력된 데이터를 서버로 전달해줌
+      - button : 버튼을 생성
+      - checkbox : 체크박스 형태의 입력을 받을 수 있음
+      - radio : 라디오 버튼 형태의 입력을 받을 수 있음
+      - reset : <form>태그 안의 사용자 입력을 초기화
+    -->
+    <form method="get" action="example">
+      <input type="radio" id="html" name="fav_language" value="html" checked>
+      <label for="html">html</label>
+      <br>
+      <input type="radio" id="css" name="fav_language" value="css">
+      <label for="css">css</label>
+      <br>
+      <input type="radio" id="javascript" name="fav_language" value="javascript">
+      <label for="javascript">javascript</label>
+      <br>
+      <button type="reset">reset</button>
+      <button>submit</button>
+    </form>
+    <!--
+      form 으로 선택된 값이 name 이라는 이름으로 전송됨
+      button의 타입이 지정되어 있지 않다면 submit 이 기본타입
+      input 의 id와 label의 for 값이 일치됨
+      - name : radio버튼의 이름. 대분류
+      - value : 선택 항목들이 가지는 고유한 값
+      - 화면에 보여주는 설명 : 태그 바깥에 입력. 화면에만 보여줄 뿐, 서버로는 value값이 전송됨
+      - checked : 화면 로딩시, 기본으로 선택된 채로 보여짐
+    -->
+    <script>
+      //선택된 radio 값 가져오기(선택자에 :checked를 붙여야 선택된 값을 가져올 수 있음)
+      //$("input[name='fav_language']:checked").value()''
+      var checkedScore = document.querySelector("input[name='fav_language']:checked")
+      alert(checkedScore.value);
+      //css 선택 후 만들어진 url을 확인
+      //file:///C:/Users/admin/Desktop/example?fav_language=css (name = value의 형태로 전송됨)
+
+      /*
+      cafe24의 경우, 모듈로 input 이 들어가있어서 html에서 checked 불가.
+
+      window.addEventListener("load", function(event){
+        $("input:radio[name='sel_product[]']").eq(0).attr("checked",true);
+      });
+
+      이런 식으로 로딩된 후 checked 속성을 넣어줄 수 있음.
+      */
+    </script>
+  </body>

@@ -6,7 +6,7 @@
   -->
   <fieldset>
     <legend>검색</legend>
-    {$form.keyword}<input type="image" src="~~" alt="검색" onclick="{$action_search_submit"/>
+    {$form.keyword}<input type="image" src="~~" alt="검색" onclick="{$action_search_submit}"/>
   </fieldset>
   <!--
     {$form.keyword} : 상품 검색어 입력 상자

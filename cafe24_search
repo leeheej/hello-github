@@ -1,0 +1,28 @@
+<div module="Layout_SearchHeader">
+  <!--@css(/css/module/layout/searchHeader.css)-->
+  <!--
+    $product_page=/product/detail.html
+    $category_page=/product/list.html
+  -->
+  <fieldset>
+    <legend>검색</legend>
+    {$form.keyword}<input type="image" src="~~" alt="검색" onclick="{$action_search_submit"/>
+  </fieldset>
+  <!--
+    {$form.keyword} : 상품 검색어 입력 상자
+    {$action_search_submit} : 상품검색 버튼 이벤트
+    
+    <input type="hidden" name="order_by" value="name">
+    을 넣어주면 검색 결과 상품 정렬 순서를 설정할 수 있음
+    value 대신 넣을 수 있는 값들
+      - 신상품순 : recent
+      - 상품명순 : name
+      - 낮은 가격순: priceasc
+      - 높은 가격순 : price
+      - 제조사 순 : manu_name
+      - 인기상품순 : favor
+      - 사용후기순 : review
+      - 조회수 순: hit_count
+      - 좋아요 순: like_count
+  -->
+</div>

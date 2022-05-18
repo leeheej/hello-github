@@ -1,0 +1,13 @@
+var gift = setInterval(function(){
+  if($(".xans-gift").length > 0){ //사은품 증정 대상일 경우, 사은품 dom 있을땐 1을 반환
+    if($("#ec-shop-gift_orderform > div").hasClass("giftArea")){ //사은품dom 이 모두 다 불러져 왔을때, radio가 체크될 수 있도록 함
+      $("input:radio[name='sel_product[]']").eq(0).attr("checked", true);
+      clearInterval(gift);
+    }else{
+      console.log("go");
+    }
+  }else{  //사은품 증정대상이 아닐경우, 0을 반환
+    learInterval(gift);
+  }
+},1000);
+//1초마다 gift 변수를 반복함
